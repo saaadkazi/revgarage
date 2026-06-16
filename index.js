@@ -4,6 +4,8 @@ const connectDB = require("./config/db");
 const dns = require("dns");
 dns.setServers(["8.8.8.8", "8.8.4.4"]);
 
+const carRoutes = require("./routes/carRoutes");
+
 dotenv.config();
 
 
@@ -13,6 +15,7 @@ const app = express();
 connectDB();
 
 app.use(express.json());
+app.use("/api/cars", carRoutes);
 
 app.get("/", (req, res) => {
     res.send("RevGarage API is Running...");
