@@ -1,11 +1,11 @@
 const express = require("express");
 const dotenv = require("dotenv");
 const connectDB = require("./config/db");
+const dns = require("dns");
+dns.setServers(["8.8.8.8", "8.8.4.4"]);
 
 dotenv.config();
 
-console.log("PORT =", process.env.PORT);
-console.log("MONGO_URI =", process.env.MONGO_URI);
 
 const app = express();
 
@@ -15,7 +15,7 @@ connectDB();
 app.use(express.json());
 
 app.get("/", (req, res) => {
-    res.send("RevGarage API is Running...🔥🚗");
+    res.send("RevGarage API is Running...");
 });
 
 const PORT = process.env.PORT || 5000;
