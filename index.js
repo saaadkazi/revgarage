@@ -1,3 +1,6 @@
+const userRoutes = require("./routes/userRoutes");
+const customerRoutes = require("./routes/customerRoutes");
+
 const express = require("express");
 const dotenv = require("dotenv");
 const connectDB = require("./config/db");
@@ -9,10 +12,15 @@ console.log("MONGO_URI =", process.env.MONGO_URI);
 
 const app = express();
 
+
 // Connect MongoDB
 connectDB();
 
 app.use(express.json());
+
+//Routes
+app.use("/api", userRoutes);
+app.use("/api", customerRoutes);
 
 app.get("/", (req, res) => {
     res.send("RevGarage API is Running...🔥🚗");
