@@ -1,6 +1,7 @@
 const userRoutes = require("./routes/userRoutes");
 const customerRoutes = require("./routes/customerRoutes");
 const modificationRoutes = require("./routes/modificationRoutes");
+const invoiceRoutes = require("./routes/invoiceRoutes");
 
 const express = require("express");
 const dotenv = require("dotenv");
@@ -23,6 +24,7 @@ app.use(express.json());
 app.use("/api", userRoutes);
 app.use("/api", customerRoutes);
 app.use("/api", modificationRoutes);
+app.use("/api", invoiceRoutes);
 
 app.get("/", (req, res) => {
     res.send("RevGarage API is Running...🔥🚗");
