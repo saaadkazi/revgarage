@@ -1,4 +1,4 @@
-const userRoutes = require("./routes/userRoutes");
+//const userRoutes = require("./routes/userRoutes");
 const customerRoutes = require("./routes/customerRoutes");
 const modificationRoutes = require("./routes/modificationRoutes");
 const invoiceRoutes = require("./routes/invoiceRoutes");
@@ -21,7 +21,7 @@ connectDB();
 app.use(express.json());
 
 //Routes
-app.use("/api", userRoutes);
+//app.use("/api", userRoutes);
 app.use("/api", customerRoutes);
 app.use("/api", modificationRoutes);
 app.use("/api", invoiceRoutes);
