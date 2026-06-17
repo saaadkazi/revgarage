@@ -16,3 +16,21 @@ exports.createWorkOrder = async (req, res) => {
         });
     }
 };
+
+exports.getAllWorkOrders = async (req, res) => {
+    try {
+        const workOrders = await WorkOrder.find();
+
+        res.status(200).json({
+            success: true,
+            count: workOrders.length,
+            data: workOrders
+        });
+
+    } catch (error) {
+        res.status(500).json({
+            success: false,
+            message: error.message
+        });
+    }
+};
