@@ -100,4 +100,43 @@ GET /api/cars
         }
     ]
 }
+ 
+
+ get by car id :
+
+{
+    "success": true,
+    "data": {
+        "_id": "6a314cf4a3e06bf7a255101f",
+        "customerId": "685000000000000000000000",
+        "brand": "Honda",
+        "model": "City",
+        "year": 2023,
+        "numberPlate": "MH12AB1234",
+        "color": "White",
+        "fuelType": "Petrol",
+        "createdAt": "2026-06-16T13:17:41.010Z",
+        "updatedAt": "2026-06-16T13:17:41.010Z",
+        "__v": 0
+    }
+}
+
+## Update Car
+
+### Endpoint
+
+PUT /api/cars/:id
+
+### Request Body
+
+{
+    "color": "Black"
+}
+
+### Response
+
+{
+    "success": true,
+    "data": {}
+}
 ```
