@@ -139,4 +139,49 @@ PUT /api/cars/:id
     "success": true,
     "data": {}
 }
+
+AUTHENTICATION :
+
+# Authentication APIs
+
+## Register User
+
+### Endpoint
+
+POST /api/register
+
+### Request Body
+
+```json
+{
+    "name": "Tanishka",
+    "email": "tanishka@gmail.com",
+    "password": "123456",
+    "role": "admin"
+}
+```
+
+### Success Response
+
+```json
+{
+    "success": true,
+    "message": "User registered successfully",
+    "data": {
+        "_id": "...",
+        "name": "Tanishka",
+        "email": "tanishka@gmail.com",
+        "role": "admin"
+    }
+}
+```
+
+### Error Response
+
+```json
+{
+    "success": false,
+    "message": "User already exists"
+}
+```
 ```
