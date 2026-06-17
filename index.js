@@ -29,3 +29,6 @@ app.listen(PORT, () => {
 
 const userRoutes = require("./routes/userRoutes");
 app.use("/api", userRoutes);
+
+const workOrderRoutes = require("./routes/workOrderRoutes");
+app.use("/api/workorders", workOrderRoutes);

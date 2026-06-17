@@ -228,3 +228,31 @@ Authorization: Bearer JWT_TOKEN
     "data": {}
 }
 ```
+
+# Work Order APIs
+## Create Work Order
+
+### Endpoint
+
+POST /api/workorders
+
+### Request Body
+
+```json
+{
+    "customerId": "...",
+    "carId": "...",
+    "serviceType": "Engine Repair",
+    "description": "Engine making unusual noise",
+    "estimatedCost": 15000
+}
+```
+
+### Response
+
+```json
+{
+    "success": true,
+    "data": {}
+}
+```
