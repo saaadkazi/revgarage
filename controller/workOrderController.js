@@ -58,3 +58,34 @@ exports.getWorkOrderById = async (req, res) => {
         });
     }
 };
+
+exports.updateWorkOrder = async (req, res) => {
+    try {
+        const workOrder = await WorkOrder.findByIdAndUpdate(
+            req.params.id,
+            req.body,
+            {
+                new: true,
+                runValidators: true
+            }
+        );
+
+        if (!workOrder) {
+            return res.status(404).json({
+                success: false,
+                message: "WorkOrder not found"
+            });
+        }
+
+        res.status(200).json({
+            success: true,
+            data: workOrder
+        });
+
+    } catch (error) {
+        res.status(500).json({
+            success: false,
+            message: error.message
+        });
+    }
+};

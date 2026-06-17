@@ -325,3 +325,46 @@ GET /api/workorders/687000000000000000000001
 ```text
 200 OK
 ```
+
+## Update Work Order
+
+### Endpoint
+
+PUT /api/workorders/:id
+
+### Example
+
+PUT /api/workorders/6a327ba0f9a06b769725a919
+
+### Request Body
+
+```json
+{
+    "status": "Completed",
+    "estimatedCost": 18000
+}
+```
+
+### Success Response
+
+```json
+{
+    "success": true,
+    "data": {
+        "_id": "6a327ba0f9a06b769725a919",
+        "customerId": "685000000000000000000000",
+        "carId": "6a314cf4a3e06bf7a255101f",
+        "serviceType": "Engine Repair",
+        "description": "Engine making unusual noise",
+        "status": "Completed",
+        "estimatedCost": 18000
+    }
+}
+```
+
+### Status Code
+
+```text
+200 OK
+```
+
