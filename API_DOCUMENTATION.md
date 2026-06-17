@@ -185,3 +185,27 @@ POST /api/register
 }
 ```
 ```
+## Login User
+
+### Endpoint
+
+POST /api/login
+
+### Request Body
+
+```json
+{
+    "email": "tanishka@gmail.com",
+    "password": "123456"
+}
+```
+
+### Success Response
+
+```json
+{
+    "success": true,
+    "message": "Login successful",
+    "token": "JWT_TOKEN"
+}
+```
