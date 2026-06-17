@@ -89,3 +89,27 @@ exports.updateCar = async (req, res) => {
         });
     }
 };
+
+exports.deleteCar = async (req, res) => {
+    try {
+        const car = await Car.findByIdAndDelete(req.params.id);
+
+        if (!car) {
+            return res.status(404).json({
+                success: false,
+                message: "Car not found"
+            });
+        }
+
+        res.status(200).json({
+            success: true,
+            message: "Car deleted successfully"
+        });
+
+    } catch (error) {
+        res.status(500).json({
+            success: false,
+            message: error.message
+        });
+    }
+};

@@ -5,13 +5,15 @@ const {
     createCar,
     getAllCars,
     getCarById,
-    updateCar
+    updateCar,
+    deleteCar
 } = require("../controller/carController");
 
 router.post("/", createCar);
 router.get("/", getAllCars);
 router.get("/:id", getCarById);
 router.put("/:id", updateCar);
+router.delete("/:id", deleteCar);
 
 module.exports = router;
 
