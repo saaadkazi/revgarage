@@ -367,4 +367,37 @@ PUT /api/workorders/6a327ba0f9a06b769725a919
 ```text
 200 OK
 ```
+## Delete Work Order
+
+### Endpoint
+
+DELETE /api/workorders/:id
+
+### Example
+
+DELETE /api/workorders/6a327ba0f9a06b769725a919
+
+### Success Response
+
+```json
+{
+    "success": true,
+    "message": "WorkOrder deleted successfully"
+}
+```
+
+### Error Response
+
+```json
+{
+    "success": false,
+    "message": "WorkOrder not found"
+}
+```
+
+### Status Code
+
+```text
+200 OK
+```
 

@@ -89,3 +89,27 @@ exports.updateWorkOrder = async (req, res) => {
         });
     }
 };
+
+exports.deleteWorkOrder = async (req, res) => {
+    try {
+        const workOrder = await WorkOrder.findByIdAndDelete(req.params.id);
+
+        if (!workOrder) {
+            return res.status(404).json({
+                success: false,
+                message: "WorkOrder not found"
+            });
+        }
+
+        res.status(200).json({
+            success: true,
+            message: "WorkOrder deleted successfully"
+        });
+
+    } catch (error) {
+        res.status(500).json({
+            success: false,
+            message: error.message
+        });
+    }
+};
