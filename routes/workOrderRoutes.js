@@ -3,10 +3,12 @@ const router = express.Router();
 
 const {
     createWorkOrder,
-    getAllWorkOrders
+    getAllWorkOrders,
+    getWorkOrderById
 } = require("../controller/workOrderController");
 
 router.post("/", createWorkOrder);
 router.get("/", getAllWorkOrders);
+router.get("/:id", getWorkOrderById);
 
 module.exports = router;

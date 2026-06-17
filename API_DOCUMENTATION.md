@@ -292,3 +292,36 @@ Fetches all work orders from the database.
 ```text
 200 OK
 ```
+
+## Get Work Order By ID
+
+### Endpoint
+
+GET /api/workorders/:id
+
+### Example
+
+GET /api/workorders/687000000000000000000001
+
+### Success Response
+
+```json
+{
+    "success": true,
+    "data": {
+        "_id": "687000000000000000000001",
+        "customerId": "685000000000000000000000",
+        "carId": "6a314cf4a3e06bf7a255101f",
+        "serviceType": "Engine Repair",
+        "description": "Engine making unusual noise",
+        "status": "Pending",
+        "estimatedCost": 15000
+    }
+}
+```
+
+### Status Code
+
+```text
+200 OK
+```
