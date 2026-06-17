@@ -209,3 +209,22 @@ POST /api/login
     "token": "JWT_TOKEN"
 }
 ```
+
+## Get Profile
+
+### Endpoint
+
+GET /api/profile
+
+### Headers
+
+Authorization: Bearer JWT_TOKEN
+
+### Success Response
+
+```json
+{
+    "success": true,
+    "data": {}
+}
+```
