@@ -1,0 +1,403 @@
+# RevGarage API Documentation
+
+## Base URL
+
+http://localhost:5000
+
+---
+
+## Cars Module
+
+### POST /api/cars
+
+Purpose:
+Create a new car record.
+
+Request Body:
+```json
+{
+  "customerId": "customer_id",
+  "brand": "Honda",
+  "model": "City",
+  "year": 2023,
+  "numberPlate": "MH12AB1234",
+  "color": "White",
+  "fuelType": "Petrol"
+}
+
+### POST /api/cars
+
+Purpose:
+Create a new car.
+
+Request Body:
+
+```json
+{
+  "customerId": "685000000000000000000000",
+  "brand": "Honda",
+  "model": "City",
+  "year": 2023,
+  "numberPlate": "MH12AB1234",
+  "color": "White",
+  "fuelType": "Petrol"
+}
+```
+
+Response:
+
+201 Created
+
+# Car APIs
+
+## Create Car
+
+### Endpoint
+POST /api/cars
+
+### Request Body
+
+```json
+{
+    "customerId": "685000000000000000000000",
+    "brand": "Honda",
+    "model": "City",
+    "year": 2023,
+    "numberPlate": "MH12AB1234",
+    "color": "White",
+    "fuelType": "Petrol"
+}
+```
+
+### Response
+
+```json
+{
+    "success": true,
+    "data": {}
+}
+```
+
+---
+
+## Get All Cars
+
+### Endpoint
+
+GET /api/cars
+
+### Response
+
+```json
+{
+    "success": true,
+    "count": 1,
+    "data": [
+        {
+            "_id": "...",
+            "brand": "Honda",
+            "model": "City"
+        }
+    ]
+}
+ 
+
+ get by car id :
+
+{
+    "success": true,
+    "data": {
+        "_id": "6a314cf4a3e06bf7a255101f",
+        "customerId": "685000000000000000000000",
+        "brand": "Honda",
+        "model": "City",
+        "year": 2023,
+        "numberPlate": "MH12AB1234",
+        "color": "White",
+        "fuelType": "Petrol",
+        "createdAt": "2026-06-16T13:17:41.010Z",
+        "updatedAt": "2026-06-16T13:17:41.010Z",
+        "__v": 0
+    }
+}
+
+## Update Car
+
+### Endpoint
+
+PUT /api/cars/:id
+
+### Request Body
+
+{
+    "color": "Black"
+}
+
+### Response
+
+{
+    "success": true,
+    "data": {}
+}
+
+AUTHENTICATION :
+
+# Authentication APIs
+
+## Register User
+
+### Endpoint
+
+POST /api/register
+
+### Request Body
+
+```json
+{
+    "name": "Tanishka",
+    "email": "tanishka@gmail.com",
+    "password": "123456",
+    "role": "admin"
+}
+```
+
+### Success Response
+
+```json
+{
+    "success": true,
+    "message": "User registered successfully",
+    "data": {
+        "_id": "...",
+        "name": "Tanishka",
+        "email": "tanishka@gmail.com",
+        "role": "admin"
+    }
+}
+```
+
+### Error Response
+
+```json
+{
+    "success": false,
+    "message": "User already exists"
+}
+```
+```
+## Login User
+
+### Endpoint
+
+POST /api/login
+
+### Request Body
+
+```json
+{
+    "email": "tanishka@gmail.com",
+    "password": "123456"
+}
+```
+
+### Success Response
+
+```json
+{
+    "success": true,
+    "message": "Login successful",
+    "token": "JWT_TOKEN"
+}
+```
+
+## Get Profile
+
+### Endpoint
+
+GET /api/profile
+
+### Headers
+
+Authorization: Bearer JWT_TOKEN
+
+### Success Response
+
+```json
+{
+    "success": true,
+    "data": {}
+}
+```
+
+# Work Order APIs
+## Create Work Order
+
+### Endpoint
+
+POST /api/workorders
+
+### Request Body
+
+```json
+{
+    "customerId": "...",
+    "carId": "...",
+    "serviceType": "Engine Repair",
+    "description": "Engine making unusual noise",
+    "estimatedCost": 15000
+}
+```
+
+### Response
+
+```json
+{
+    "success": true,
+    "data": {}
+}
+```
+
+## Get All Work Orders
+
+### Endpoint
+
+GET /api/workorders
+
+### Description
+
+Fetches all work orders from the database.
+
+### Success Response
+
+```json
+{
+    "success": true,
+    "count": 2,
+    "data": [
+        {
+            "_id": "687000000000000000000001",
+            "customerId": "685000000000000000000000",
+            "carId": "6a314cf4a3e06bf7a255101f",
+            "serviceType": "Engine Repair",
+            "description": "Engine making unusual noise",
+            "status": "Pending",
+            "estimatedCost": 15000
+        }
+    ]
+}
+```
+
+### Status Code
+
+```text
+200 OK
+```
+
+## Get Work Order By ID
+
+### Endpoint
+
+GET /api/workorders/:id
+
+### Example
+
+GET /api/workorders/687000000000000000000001
+
+### Success Response
+
+```json
+{
+    "success": true,
+    "data": {
+        "_id": "687000000000000000000001",
+        "customerId": "685000000000000000000000",
+        "carId": "6a314cf4a3e06bf7a255101f",
+        "serviceType": "Engine Repair",
+        "description": "Engine making unusual noise",
+        "status": "Pending",
+        "estimatedCost": 15000
+    }
+}
+```
+
+### Status Code
+
+```text
+200 OK
+```
+
+## Update Work Order
+
+### Endpoint
+
+PUT /api/workorders/:id
+
+### Example
+
+PUT /api/workorders/6a327ba0f9a06b769725a919
+
+### Request Body
+
+```json
+{
+    "status": "Completed",
+    "estimatedCost": 18000
+}
+```
+
+### Success Response
+
+```json
+{
+    "success": true,
+    "data": {
+        "_id": "6a327ba0f9a06b769725a919",
+        "customerId": "685000000000000000000000",
+        "carId": "6a314cf4a3e06bf7a255101f",
+        "serviceType": "Engine Repair",
+        "description": "Engine making unusual noise",
+        "status": "Completed",
+        "estimatedCost": 18000
+    }
+}
+```
+
+### Status Code
+
+```text
+200 OK
+```
+## Delete Work Order
+
+### Endpoint
+
+DELETE /api/workorders/:id
+
+### Example
+
+DELETE /api/workorders/6a327ba0f9a06b769725a919
+
+### Success Response
+
+```json
+{
+    "success": true,
+    "message": "WorkOrder deleted successfully"
+}
+```
+
+### Error Response
+
+```json
+{
+    "success": false,
+    "message": "WorkOrder not found"
+}
+```
+
+### Status Code
+
+```text
+200 OK
+```
+
