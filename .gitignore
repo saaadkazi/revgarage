@@ -76,4 +76,9 @@ tsconfig.tsbuildinfo
 .node_repl_history
 
 # Output of 'npm pack'
-*.tgz
+*.tgz
+
+#Temporary Files
+~$*
+*.tmp
+*.docx
