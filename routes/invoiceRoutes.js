@@ -1,3 +1,4 @@
+const { auth } = require("../middleware/authMiddleware");
 const express = require("express");
 
 const {
@@ -9,12 +10,12 @@ const {
 const router = express.Router();
 
 // CREATE INVOICE
-router.post("/invoices", createInvoice);
+router.post("/invoices", auth, createInvoice);
 
 // GET ALL INVOICES
-router.get("/invoices", getInvoices);
+router.get("/invoices", auth, getInvoices);
 
 // GET INVOICE BY ID
-router.get("/invoices/:id", getInvoiceById);
+router.get("/invoices/:id", auth, getInvoiceById);
 
 module.exports = router;
