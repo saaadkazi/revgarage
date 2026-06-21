@@ -1,403 +1,347 @@
 # RevGarage API Documentation
 
+## Project Title
+RevGarage - Role Based Service Management System
+
+## Project Overview
+RevGarage is a backend-based automobile workshop management system designed to manage service operations efficiently.
+
+This system provides APIs for:
+- User Authentication
+- Customer Management
+- Car Management
+- Modification Management
+- Work Order Management
+- Invoice Management
+
+All major APIs are protected using JWT Authentication.
+
+CRUD Operations used:
+- Create → POST
+- Read → GET
+- Update → PUT
+- Delete → DELETE
+
+---
+
+## Tech Stack
+
+- Node.js
+- Express.js
+- MongoDB Atlas
+- Mongoose
+- JWT
+- bcrypt
+- Postman
+
+---
+
 ## Base URL
 
-http://localhost:5000
-
----
-
-## Cars Module
-
-### POST /api/cars
-
-Purpose:
-Create a new car record.
-
-Request Body:
-```json
-{
-  "customerId": "customer_id",
-  "brand": "Honda",
-  "model": "City",
-  "year": 2023,
-  "numberPlate": "MH12AB1234",
-  "color": "White",
-  "fuelType": "Petrol"
-}
-
-### POST /api/cars
-
-Purpose:
-Create a new car.
-
-Request Body:
-
-```json
-{
-  "customerId": "685000000000000000000000",
-  "brand": "Honda",
-  "model": "City",
-  "year": 2023,
-  "numberPlate": "MH12AB1234",
-  "color": "White",
-  "fuelType": "Petrol"
-}
-```
-
-Response:
-
-201 Created
-
-# Car APIs
-
-## Create Car
-
-### Endpoint
-POST /api/cars
-
-### Request Body
-
-```json
-{
-    "customerId": "685000000000000000000000",
-    "brand": "Honda",
-    "model": "City",
-    "year": 2023,
-    "numberPlate": "MH12AB1234",
-    "color": "White",
-    "fuelType": "Petrol"
-}
-```
-
-### Response
-
-```json
-{
-    "success": true,
-    "data": {}
-}
+```text
+http://localhost:8000
 ```
 
 ---
 
-## Get All Cars
+# Collaboration Details
 
-### Endpoint
+## Saad Contributions
+- Customer CRUD APIs
+- Modification CRUD APIs
+- Invoice APIs
+- Branch Merge & Conflict Resolution
+- Final Project Integration
+- Postman Testing & Collection
 
-GET /api/cars
+## Tanishka Contributions
+- Authentication APIs
+- Car CRUD APIs
+- WorkOrder CRUD APIs
 
-### Response
+---
 
-```json
-{
-    "success": true,
-    "count": 1,
-    "data": [
-        {
-            "_id": "...",
-            "brand": "Honda",
-            "model": "City"
-        }
-    ]
-}
- 
+# Folder Structure
 
- get by car id :
+```bash
+RevGarage/
+│
+├── config/
+├── controller/
+├── middleware/
+├── models/
+├── routes/
+├── .env
+├── .gitignore
+├── package.json
+└── index.js
+```
 
-{
-    "success": true,
-    "data": {
-        "_id": "6a314cf4a3e06bf7a255101f",
-        "customerId": "685000000000000000000000",
-        "brand": "Honda",
-        "model": "City",
-        "year": 2023,
-        "numberPlate": "MH12AB1234",
-        "color": "White",
-        "fuelType": "Petrol",
-        "createdAt": "2026-06-16T13:17:41.010Z",
-        "updatedAt": "2026-06-16T13:17:41.010Z",
-        "__v": 0
-    }
-}
+---
 
-## Update Car
+# Models Used
 
-### Endpoint
+## User Model
+Purpose:
+Stores user authentication details.
 
-PUT /api/cars/:id
+Fields:
+- name
+- email
+- password
+- role
 
-### Request Body
+Used for:
+- Registration
+- Login
+- Authentication
 
-{
-    "color": "Black"
-}
+---
 
-### Response
+## Customer Model
+Purpose:
+Stores customer details.
 
-{
-    "success": true,
-    "data": {}
-}
+Fields:
+- name
+- email
+- phone
 
-AUTHENTICATION :
+Used for:
+- Customer management
+- Customer lookup
+
+---
+
+## Car Model
+Purpose:
+Stores vehicle details.
+
+Fields:
+- customerId
+- brand
+- model
+- year
+- numberPlate
+- color
+- fuelType
+
+Used for:
+- Vehicle tracking
+- Service history
+
+---
+
+## Modification Model
+Purpose:
+Stores vehicle modification records.
+
+Used for:
+- Custom modification requests
+- Workshop modification tracking
+
+---
+
+## WorkOrder Model
+Purpose:
+Tracks service jobs.
+
+Used for:
+- Repair tracking
+- Job status management
+
+---
+
+## Invoice Model
+Purpose:
+Stores billing data.
+
+Used for:
+- Payment records
+- Invoice generation
+
 
 # Authentication APIs
 
 ## Register User
 
-### Endpoint
-
+Endpoint:
+```text
 POST /api/register
+```
 
-### Request Body
+Controller Function:
+`register()`
 
+Purpose:
+Creates a new user.
+
+Request Body:
 ```json
 {
-    "name": "Tanishka",
-    "email": "tanishka@gmail.com",
-    "password": "123456",
-    "role": "admin"
+  "name": "Saad",
+  "email": "saad@gmail.com",
+  "password": "123456",
+  "role": "admin"
 }
 ```
 
-### Success Response
+---
 
-```json
-{
-    "success": true,
-    "message": "User registered successfully",
-    "data": {
-        "_id": "...",
-        "name": "Tanishka",
-        "email": "tanishka@gmail.com",
-        "role": "admin"
-    }
-}
-```
-
-### Error Response
-
-```json
-{
-    "success": false,
-    "message": "User already exists"
-}
-```
-```
 ## Login User
 
-### Endpoint
-
+Endpoint:
+```text
 POST /api/login
+```
 
-### Request Body
+Controller Function:
+`login()`
 
+Purpose:
+Authenticates user and generates JWT token.
+
+Response:
 ```json
 {
-    "email": "tanishka@gmail.com",
-    "password": "123456"
+  "success": true,
+  "token": "JWT_TOKEN"
 }
 ```
 
-### Success Response
-
-```json
-{
-    "success": true,
-    "message": "Login successful",
-    "token": "JWT_TOKEN"
-}
-```
+---
 
 ## Get Profile
 
-### Endpoint
-
+Endpoint:
+```text
 GET /api/profile
+```
 
-### Headers
+Protected:
+Yes
 
+Controller Function:
+`getProfile()`
+
+Purpose:
+Returns logged in user profile.
+
+
+# Customer APIs
+
+POST /api/customers → createCustomer() → Creates customer  
+GET /api/customers → getCustomers() → Fetch all customers  
+GET /api/customers/:id → getCustomerById() → Fetch customer by ID  
+PUT /api/customers/:id → updateCustomer() → Update customer  
+DELETE /api/customers/:id → deleteCustomer() → Delete customer  
+
+---
+
+# Modification APIs
+
+POST /api/modifications → createModification() → Create modification  
+GET /api/modifications → getModifications() → Get all modifications  
+GET /api/modifications/:id → getModificationById() → Get by ID  
+PUT /api/modifications/:id → updateModification() → Update modification  
+DELETE /api/modifications/:id → deleteModification() → Delete modification  
+
+---
+
+# Invoice APIs
+
+POST /api/invoices → createInvoice() → Create invoice  
+GET /api/invoices → getInvoices() → Get all invoices  
+GET /api/invoices/:id → getInvoiceById() → Get invoice by ID  
+
+
+# Car APIs
+
+POST /api/cars → createCar() → Create car  
+GET /api/cars → getAllCars() → Get all cars  
+GET /api/cars/:id → getCarById() → Get car by ID  
+PUT /api/cars/:id → updateCar() → Update car  
+DELETE /api/cars/:id → deleteCar() → Delete car  
+
+---
+
+# WorkOrder APIs
+
+POST /api/workorders → createWorkOrder() → Create work order  
+GET /api/workorders → getAllWorkOrders() → Get all work orders  
+GET /api/workorders/:id → getWorkOrderById() → Get work order by ID  
+PUT /api/workorders/:id → updateWorkOrder() → Update work order  
+DELETE /api/workorders/:id → deleteWorkOrder() → Delete work order  
+
+
+# Protected Routes
+
+All major API routes in RevGarage are protected using JWT (JSON Web Token) authentication middleware to ensure secure access to sensitive resources.
+
+## Authentication Header Format
+
+```text
 Authorization: Bearer JWT_TOKEN
-
-### Success Response
-
-```json
-{
-    "success": true,
-    "data": {}
-}
 ```
 
-# Work Order APIs
-## Create Work Order
-
-### Endpoint
-
-POST /api/workorders
-
-### Request Body
-
-```json
-{
-    "customerId": "...",
-    "carId": "...",
-    "serviceType": "Engine Repair",
-    "description": "Engine making unusual noise",
-    "estimatedCost": 15000
-}
-```
-
-### Response
-
-```json
-{
-    "success": true,
-    "data": {}
-}
-```
-
-## Get All Work Orders
-
-### Endpoint
-
-GET /api/workorders
-
-### Description
-
-Fetches all work orders from the database.
-
-### Success Response
-
-```json
-{
-    "success": true,
-    "count": 2,
-    "data": [
-        {
-            "_id": "687000000000000000000001",
-            "customerId": "685000000000000000000000",
-            "carId": "6a314cf4a3e06bf7a255101f",
-            "serviceType": "Engine Repair",
-            "description": "Engine making unusual noise",
-            "status": "Pending",
-            "estimatedCost": 15000
-        }
-    ]
-}
-```
-
-### Status Code
+## Middleware Used
 
 ```text
-200 OK
+middleware/authMiddleware.js
 ```
 
-## Get Work Order By ID
+## Middleware Responsibilities
 
-### Endpoint
+The authentication middleware performs the following tasks:
 
-GET /api/workorders/:id
+* Extracts JWT token from the Authorization header
+* Verifies token using JWT secret key
+* Decodes authenticated user information
+* Attaches user data to `req.user`
+* Grants access only to authorized users
+* Returns error response for invalid or missing tokens
 
-### Example
-
-GET /api/workorders/687000000000000000000001
-
-### Success Response
+Example error response:
 
 ```json
 {
-    "success": true,
-    "data": {
-        "_id": "687000000000000000000001",
-        "customerId": "685000000000000000000000",
-        "carId": "6a314cf4a3e06bf7a255101f",
-        "serviceType": "Engine Repair",
-        "description": "Engine making unusual noise",
-        "status": "Pending",
-        "estimatedCost": 15000
-    }
+  "success": false,
+  "message": "Invalid token"
 }
 ```
 
-### Status Code
+---
 
-```text
-200 OK
-```
+# GitHub Repository Link
 
-## Update Work Order
+https://github.com/saaadkazi/revgarage
 
-### Endpoint
+---
 
-PUT /api/workorders/:id
+# Postman Collection Link
 
-### Example
+https://saadkazi0901-381061.postman.co/workspace/Saad-Kazi's-Workspace~ba2a533c-6bef-48c5-85b5-f73dda3ea51c/folder/55486250-4221627f-6ab1-473f-bafa-ae5e1acb1ed1?action=share&source=copy-link&creator=55486250
 
-PUT /api/workorders/6a327ba0f9a06b769725a919
+---
 
-### Request Body
+# Conclusion
 
-```json
-{
-    "status": "Completed",
-    "estimatedCost": 18000
-}
-```
+RevGarage successfully implements a complete backend service management system for automobile workshops using Node.js, Express.js, and MongoDB.
 
-### Success Response
+Project Features:
 
-```json
-{
-    "success": true,
-    "data": {
-        "_id": "6a327ba0f9a06b769725a919",
-        "customerId": "685000000000000000000000",
-        "carId": "6a314cf4a3e06bf7a255101f",
-        "serviceType": "Engine Repair",
-        "description": "Engine making unusual noise",
-        "status": "Completed",
-        "estimatedCost": 18000
-    }
-}
-```
+* Role-based authentication using JWT
+* Protected CRUD APIs
+* Customer management
+* Vehicle management
+* Modification tracking
+* Work order management
+* Invoice generation
 
-### Status Code
+This project demonstrates practical implementation of:
 
-```text
-200 OK
-```
-## Delete Work Order
-
-### Endpoint
-
-DELETE /api/workorders/:id
-
-### Example
-
-DELETE /api/workorders/6a327ba0f9a06b769725a919
-
-### Success Response
-
-```json
-{
-    "success": true,
-    "message": "WorkOrder deleted successfully"
-}
-```
-
-### Error Response
-
-```json
-{
-    "success": false,
-    "message": "WorkOrder not found"
-}
-```
-
-### Status Code
-
-```text
-200 OK
-```
-
+* REST API development
+* MongoDB schema design
+* Authentication & authorization
+* Team collaboration using Git & GitHub
+* API testing using Postman
