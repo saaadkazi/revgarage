@@ -320,8 +320,7 @@ https://github.com/saaadkazi/revgarage
 
 # Postman Collection Link
 
-https://saadkazi0901-381061.postman.co/workspace/Saad-Kazi's-Workspace~ba2a533c-6bef-48c5-85b5-f73dda3ea51c/folder/55486250-4221627f-6ab1-473f-bafa-ae5e1acb1ed1?action=share&source=copy-link&creator=55486250
-
+https://saadkazi0901-381061.postman.co/workspace/Saad-Kazi's-Workspace~ba2a533c-6bef-48c5-85b5-f73dda3ea51c/collection/55486250-4b8c0d02-8255-46c3-b259-cc3b84682833?action=share&creator=55486250&sideView=agentMode
 ---
 
 # Conclusion
