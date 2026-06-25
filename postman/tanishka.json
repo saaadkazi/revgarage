@@ -1,0 +1,581 @@
+{
+  "info": {
+    "_postman_id": "0f9fe949-7c3f-40a2-a151-6ac19da2758a",
+    "name": "Tan_Revgarage",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "55494293",
+    "_collection_link": "https://go.postman.co/collection/55494293-0f9fe949-7c3f-40a2-a151-6ac19da2758a?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Authentication",
+      "item": [
+        {
+          "name": "register 1",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Tanishka Ajit Salve\",\r\n  \"email\": \"tanishkasalve@gmail.com\",\r\n  \"password\": \"1234567\",\r\n  \"role\": \"admin\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/register",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "register"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "login",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"email\": \"tanishkasalve@gmail.com\",\r\n  \"password\": \"1234567\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/login",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "register 2",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Tan\",\r\n  \"email\": \"tan@gmail.com\",\r\n  \"password\": \"12345678910\",\r\n  \"role\": \"admin\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/register",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "register"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get 1",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhM2NjM2Y0OGNhYWNiYmQ3NzRhMTE1NCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc4MjM2NzMzOCwiZXhwIjoxNzgyNDUzNzM4fQ.y0XLwIVMWHvrejyhZe1IjlkxN1eFmU4Me039E_b3DoI",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/profile",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "profile"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "car",
+      "item": [
+        {
+          "name": "car 1",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhM2NjM2Y0OGNhYWNiYmQ3NzRhMTE1NCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc4MjM2NzMzOCwiZXhwIjoxNzgyNDUzNzM4fQ.y0XLwIVMWHvrejyhZe1IjlkxN1eFmU4Me039E_b3DoI",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"customerId\": \"6a37b4f3271ce16b97dd448b\",\r\n  \"brand\": \"Honda\",\r\n  \"model\": \"City\",\r\n  \"year\": 2023,\r\n  \"numberPlate\": \"MH12AB1237\",\r\n  \"color\": \"White\",\r\n  \"fuelType\": \"Petrol\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/cars",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "cars"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "car 2",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhM2NjM2Y0OGNhYWNiYmQ3NzRhMTE1NCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc4MjM2NzMzOCwiZXhwIjoxNzgyNDUzNzM4fQ.y0XLwIVMWHvrejyhZe1IjlkxN1eFmU4Me039E_b3DoI",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"customerId\": \"6a37b4f3271ce16b97dd448b\",\r\n  \"brand\": \"Honda\",\r\n  \"model\": \"City\",\r\n  \"year\": 2023,\r\n  \"numberPlate\": \"MH12AB1230\",\r\n  \"color\": \"White\",\r\n  \"fuelType\": \"Petrol\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/cars",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "cars"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get all",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhM2NjM2Y0OGNhYWNiYmQ3NzRhMTE1NCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc4MjM2NzMzOCwiZXhwIjoxNzgyNDUzNzM4fQ.y0XLwIVMWHvrejyhZe1IjlkxN1eFmU4Me039E_b3DoI",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/cars",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "cars"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get by id",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhM2NjM2Y0OGNhYWNiYmQ3NzRhMTE1NCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc4MjM2NzMzOCwiZXhwIjoxNzgyNDUzNzM4fQ.y0XLwIVMWHvrejyhZe1IjlkxN1eFmU4Me039E_b3DoI",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/cars/6a37c2d33745ddbdb81ab5b4",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "cars",
+                "6a37c2d33745ddbdb81ab5b4"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update car 1",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhM2NjM2Y0OGNhYWNiYmQ3NzRhMTE1NCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc4MjM2NzMzOCwiZXhwIjoxNzgyNDUzNzM4fQ.y0XLwIVMWHvrejyhZe1IjlkxN1eFmU4Me039E_b3DoI",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"color\": \"Black\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/cars/6a3cc9f78caacbbd774a115b",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "cars",
+                "6a3cc9f78caacbbd774a115b"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete car 1",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhM2NjM2Y0OGNhYWNiYmQ3NzRhMTE1NCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc4MjM2NzMzOCwiZXhwIjoxNzgyNDUzNzM4fQ.y0XLwIVMWHvrejyhZe1IjlkxN1eFmU4Me039E_b3DoI",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/cars/6a3cc9cd8caacbbd774a1159",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "cars",
+                "6a3cc9cd8caacbbd774a1159"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "workorder",
+      "item": [
+        {
+          "name": "work 1",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhM2NjM2Y0OGNhYWNiYmQ3NzRhMTE1NCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc4MjM2NzMzOCwiZXhwIjoxNzgyNDUzNzM4fQ.y0XLwIVMWHvrejyhZe1IjlkxN1eFmU4Me039E_b3DoI",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"customerId\": \"6a37b4f3271ce16b97dd448b\",\r\n  \"carId\": \"6a3cc9f78caacbbd774a115b\",\r\n  \"serviceType\": \"Engine Repair\",\r\n  \"description\": \"Engine making noise\",\r\n  \"estimatedCost\": 12000\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/workorders",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "workorders"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "work 2",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhM2NjM2Y0OGNhYWNiYmQ3NzRhMTE1NCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc4MjM2NzMzOCwiZXhwIjoxNzgyNDUzNzM4fQ.y0XLwIVMWHvrejyhZe1IjlkxN1eFmU4Me039E_b3DoI",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"customerId\": \"6a37b4f3271ce16b97dd448b\",\r\n  \"carId\": \"6a3cc9f78caacbbd774a115b\",\r\n  \"serviceType\": \"Colour change \",\r\n  \"description\": \"Black colour\",\r\n  \"estimatedCost\": 12000\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/workorders",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "workorders"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get all",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhM2NjM2Y0OGNhYWNiYmQ3NzRhMTE1NCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc4MjM2NzMzOCwiZXhwIjoxNzgyNDUzNzM4fQ.y0XLwIVMWHvrejyhZe1IjlkxN1eFmU4Me039E_b3DoI",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/workorders",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "workorders"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "work by id",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhM2NjM2Y0OGNhYWNiYmQ3NzRhMTE1NCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc4MjM2NzMzOCwiZXhwIjoxNzgyNDUzNzM4fQ.y0XLwIVMWHvrejyhZe1IjlkxN1eFmU4Me039E_b3DoI",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/workorders/6a3ccc348caacbbd774a115e",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "workorders",
+                "6a3ccc348caacbbd774a115e"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhM2NjM2Y0OGNhYWNiYmQ3NzRhMTE1NCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc4MjM2NzMzOCwiZXhwIjoxNzgyNDUzNzM4fQ.y0XLwIVMWHvrejyhZe1IjlkxN1eFmU4Me039E_b3DoI",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"status\": \"In Progress\",\r\n  \"estimatedCost\": 15000\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/workorders/6a3ccc348caacbbd774a115e",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "workorders",
+                "6a3ccc348caacbbd774a115e"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhM2NjM2Y0OGNhYWNiYmQ3NzRhMTE1NCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc4MjM2NzMzOCwiZXhwIjoxNzgyNDUzNzM4fQ.y0XLwIVMWHvrejyhZe1IjlkxN1eFmU4Me039E_b3DoI",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/workorders/6a3ccc348caacbbd774a115e",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "workorders",
+                "6a3ccc348caacbbd774a115e"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "auth_secret_0qx5",
+      "secret": true
+    }
+  ]
+}

@@ -1,0 +1,726 @@
+{
+  "info": {
+    "_postman_id": "4b8c0d02-8255-46c3-b259-cc3b84682833",
+    "name": "My Collection",
+    "description": "### Welcome to Postman! This is your first collection. \n\nCollections are your starting point for building and testing APIs. You can use this one to:\n\n• Group related requests\n• Test your API in real-world scenarios\n• Document and share your requests\n\nUpdate the name and overview whenever you’re ready to make it yours.\n\n[Learn more about Postman Collections.](https://learning.postman.com/docs/collections/collections-overview/)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "55486250",
+    "_collection_link": "https://go.postman.co/collection/55486250-4b8c0d02-8255-46c3-b259-cc3b84682833?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "RevGarage",
+      "item": [
+        {
+          "name": "Auth",
+          "item": [
+            {
+              "name": "New Request",
+              "request": {
+                "method": "GET",
+                "header": []
+              },
+              "response": []
+            },
+            {
+              "name": "Register User",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"name\": \"Saad\",\r\n  \"email\": \"saad@gmail.com\",\r\n  \"password\": \"123456\",\r\n  \"role\": \"admin\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8000/api/register",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8000",
+                  "path": [
+                    "api",
+                    "register"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "login user",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"email\": \"saad2@gmail.com\",\r\n  \"password\": \"123456\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8000/api/login",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8000",
+                  "path": [
+                    "api",
+                    "login"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Customer",
+          "item": [
+            {
+              "name": "create customer",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"name\": \"Saad Kazi\",\r\n  \"email\": \"saad@gmail.com\",\r\n  \"phone\": \"8788940660\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:5000/api/customers",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "customers"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "get all customer",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:5000/api/customers",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "customers"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "get by id",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:5000/api/customers/6a3130a5bfed11e1e57518b7",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "customers",
+                    "6a3130a5bfed11e1e57518b7"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "update customer",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"name\":\"Saad\",\r\n  \"phone\":\"9999999999\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:5000/api/customers/6a3130a5bfed11e1e57518b7",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "customers",
+                    "6a3130a5bfed11e1e57518b7"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "deleted customer",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:5000/api/customers/6a3130a5bfed11e1e57518b7",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "customers",
+                    "6a3130a5bfed11e1e57518b7"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Modification",
+          "item": [
+            {
+              "name": "modification created",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"name\": \"Body Kit\",\r\n    \"category\": \"Exterior\",\r\n    \"description\": \"Premium body kit installation\",\r\n    \"price\": 15000,\r\n    \"status\": \"Available\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:5000/api/modifications",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "modifications"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "get all modification",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:5000/api/modifications",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "modifications"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Update Modification",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"name\": \"Body Kit Premium\",\r\n    \"description\": \"Updated Body Kit\",\r\n    \"price\": 18000,\r\n    \"status\": \"Available\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:5000/api/modifications/6a325f701db2e0f22e0ad037",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "modifications",
+                    "6a325f701db2e0f22e0ad037"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "get modification by id",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:5000/api/modifications/6a325f701db2e0f22e0ad037",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "modifications",
+                    "6a325f701db2e0f22e0ad037"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "delete modification",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:5000/api/modifications/6a325f701db2e0f22e0ad037",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "modifications",
+                    "6a325f701db2e0f22e0ad037"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Invoice",
+          "item": [
+            {
+              "name": "invoice created",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"customerName\": \"Saad Kazi\",\r\n    \"vehicleNumber\": \"MH12AB1234\",\r\n    \"serviceName\": \"Body Kit\",\r\n    \"amount\": 15000,\r\n    \"status\": \"Paid\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:5000/api/invoices",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "invoices"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "get all invoices",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:5000/api/invoices",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "invoices"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "get invoice by id",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:5000/api/invoices/6a32672e51842df2ee15cccd",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "invoices",
+                    "6a32672e51842df2ee15cccd"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Cars",
+          "item": [
+            {
+              "name": "Create Car",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"customerId\": \"685000000000000000000000\",\r\n    \"brand\": \"Honda\",\r\n    \"model\": \"City\",\r\n    \"year\": 2023,\r\n    \"numberPlate\": \"MH12AB1234\",\r\n    \"color\": \"White\",\r\n    \"fuelType\": \"Petrol\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:5000/api/cars",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "cars"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "GET ALL CARS",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:5000/api/cars/",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "cars",
+                    ""
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "GET CAR BY ID",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:5000/api/cars/6a314cf4a3e06bf7a255101f",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "cars",
+                    "6a314cf4a3e06bf7a255101f"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Update Car By ID",
+              "request": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"color\": \"Black\",\r\n    \"fuelType\": \"Hybrid\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:5000/api/cars/6a314cf4a3e06bf7a255101f",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "cars",
+                    "6a314cf4a3e06bf7a255101f"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Delete Car By ID",
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:5000/api/cars/6a314cf4a3e06bf7a255101f",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "cars",
+                    "6a314cf4a3e06bf7a255101f"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Workoreder",
+          "item": [
+            {
+              "name": "Create",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"customerId\": \"685000000000000000000000\",\r\n    \"carId\": \"6a314cf4a3e06bf7a255101f\",\r\n    \"serviceType\": \"Engine Repair\",\r\n    \"description\": \"Engine making unusual noise\",\r\n    \"estimatedCost\": 15000\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:5000/api/workorders",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "workorders"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "get all",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:5000/api/workorders",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "workorders"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "get  by id",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:5000/api/workorders/6a327ba0f9a06b769725a919",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "workorders",
+                    "6a327ba0f9a06b769725a919"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "update by ID",
+              "request": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"status\": \"Completed\",\r\n    \"estimatedCost\": 18000,\r\n    \"under observation of\": \"Tanishka Salve\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:5000/api/workorders/6a327ba0f9a06b769725a919",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "workorders",
+                    "6a327ba0f9a06b769725a919"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Delete by ID",
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:5000/api/workorders/6a327ba0f9a06b769725a919",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "workorders",
+                    "6a327ba0f9a06b769725a919"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "supabase_service_role_api_key_1dfj",
+      "secret": true
+    },
+    {
+      "key": "json_web_token_1dfj",
+      "secret": true
+    }
+  ]
+}
