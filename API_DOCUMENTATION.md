@@ -52,7 +52,6 @@ http://localhost:8000
 - Invoice APIs
 - Branch Merge & Conflict Resolution
 - Final Project Integration
-- Postman Testing & Collection
 
 ## Tanishka Contributions
 - Authentication APIs
